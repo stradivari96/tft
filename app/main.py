@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 
 def create_application() -> FastAPI:
     app = FastAPI()
-    templates = Jinja2Templates(directory="tft_stats/templates")
+    templates = Jinja2Templates(directory="app/templates")
 
     # Routers
     # app.include_router(search.router, prefix="/search")

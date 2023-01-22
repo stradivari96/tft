@@ -5,7 +5,11 @@
 #    pip-compile requirements-dev.in
 #
 anyio==3.6.2
-    # via starlette
+    # via
+    #   httpcore
+    #   starlette
+attrs==22.2.0
+    # via pytest
 bandit==1.7.4
     # via -r requirements-dev.in
 black==22.12.0
@@ -15,7 +19,10 @@ build==0.10.0
 cachecontrol[filecache]==0.12.11
     # via pip-audit
 certifi==2022.12.7
-    # via requests
+    # via
+    #   httpcore
+    #   httpx
+    #   requests
 cfgv==3.3.1
     # via pre-commit
 charset-normalizer==3.0.1
@@ -25,10 +32,14 @@ click==8.1.3
     #   black
     #   pip-tools
     #   uvicorn
+coverage[toml]==7.0.5
+    # via pytest-cov
 cyclonedx-python-lib==3.1.5
     # via pip-audit
 distlib==0.3.6
     # via virtualenv
+exceptiongroup==1.1.0
+    # via pytest
 fastapi==0.89.1
     # via -r requirements.in
 filelock==3.9.0
@@ -40,15 +51,24 @@ gitdb==4.0.10
 gitpython==3.1.30
     # via bandit
 h11==0.14.0
-    # via uvicorn
+    # via
+    #   httpcore
+    #   uvicorn
 html5lib==1.1
     # via pip-audit
+httpcore==0.16.3
+    # via httpx
+httpx==0.23.3
+    # via -r requirements.in
 identify==2.5.13
     # via pre-commit
 idna==3.4
     # via
     #   anyio
     #   requests
+    #   rfc3986
+iniconfig==2.0.0
+    # via pytest
 isort==5.11.4
     # via -r requirements-dev.in
 jinja2==3.1.2
@@ -76,6 +96,7 @@ packaging==23.0
     #   build
     #   pip-audit
     #   pip-requirements-parser
+    #   pytest
 pathspec==0.10.3
     # via black
 pbr==5.11.1
@@ -92,6 +113,8 @@ platformdirs==2.6.2
     # via
     #   black
     #   virtualenv
+pluggy==1.0.0
+    # via pytest
 pre-commit==2.21.0
     # via -r requirements-dev.in
 pycodestyle==2.10.0
@@ -106,6 +129,12 @@ pyparsing==3.0.9
     # via pip-requirements-parser
 pyproject-hooks==1.0.0
     # via build
+pytest==7.2.1
+    # via
+    #   -r requirements-dev.in
+    #   pytest-cov
+pytest-cov==4.0.0
+    # via -r requirements-dev.in
 pyyaml==6.0
     # via
     #   bandit
@@ -114,6 +143,8 @@ requests==2.28.2
     # via cachecontrol
 resolvelib==0.9.0
     # via pip-audit
+rfc3986[idna2008]==1.5.0
+    # via httpx
 rich==13.2.0
     # via pip-audit
 six==1.16.0
@@ -121,7 +152,10 @@ six==1.16.0
 smmap==5.0.0
     # via gitdb
 sniffio==1.3.0
-    # via anyio
+    # via
+    #   anyio
+    #   httpcore
+    #   httpx
 sortedcontainers==2.4.0
     # via cyclonedx-python-lib
 starlette==0.22.0
@@ -136,7 +170,9 @@ tomli==2.0.1
     # via
     #   black
     #   build
+    #   coverage
     #   pyproject-hooks
+    #   pytest
 typing-extensions==4.4.0
     # via
     #   black
