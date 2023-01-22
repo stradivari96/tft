@@ -1,0 +1,27 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: "3.9"
+
+    - name: Install dependencies
+      run: pip install -r requirements-dev.txt
+
+    - name: Pre-commit
+      run: pre-commit run --all-files
+
+    - name: Audit
+      run: pip-audit -r requirements.txt --no-deps
+
+    - name: Test with pytest
+      run: pytest --cov=app --cov-fail-under=80
