@@ -1,3 +1,9 @@
 -r requirements.in
 
 pip-tools
+pre-commit
+isort
+bandit
+pip-audit
+flake8
+black

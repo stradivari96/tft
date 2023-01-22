@@ -20,5 +20,8 @@ jobs:
     - name: Pre-commit
       run: pre-commit run --all-files
 
+    - name: Audit
+      run: pip-audit -r requirements.txt --no-deps
+
     - name: Test with pytest
       run: pytest --cov=app --cov-fail-under=80 --cov-report xml

@@ -6,44 +6,150 @@
 #
 anyio==3.6.2
     # via starlette
+bandit==1.7.4
+    # via -r requirements-dev.in
+black==22.12.0
+    # via -r requirements-dev.in
 build==0.10.0
     # via pip-tools
+cachecontrol[filecache]==0.12.11
+    # via pip-audit
+certifi==2022.12.7
+    # via requests
+cfgv==3.3.1
+    # via pre-commit
+charset-normalizer==3.0.1
+    # via requests
 click==8.1.3
     # via
+    #   black
     #   pip-tools
     #   uvicorn
+cyclonedx-python-lib==3.1.5
+    # via pip-audit
+distlib==0.3.6
+    # via virtualenv
 fastapi==0.89.1
     # via -r requirements.in
+filelock==3.9.0
+    # via virtualenv
+flake8==6.0.0
+    # via -r requirements-dev.in
+gitdb==4.0.10
+    # via gitpython
+gitpython==3.1.30
+    # via bandit
 h11==0.14.0
     # via uvicorn
+html5lib==1.1
+    # via pip-audit
+identify==2.5.13
+    # via pre-commit
 idna==3.4
-    # via anyio
+    # via
+    #   anyio
+    #   requests
+isort==5.11.4
+    # via -r requirements-dev.in
 jinja2==3.1.2
     # via -r requirements.in
+lockfile==0.12.2
+    # via cachecontrol
+markdown-it-py==2.1.0
+    # via rich
 markupsafe==2.1.2
     # via jinja2
+mccabe==0.7.0
+    # via flake8
+mdurl==0.1.2
+    # via markdown-it-py
+msgpack==1.0.4
+    # via cachecontrol
+mypy-extensions==0.4.3
+    # via black
+nodeenv==1.7.0
+    # via pre-commit
+packageurl-python==0.10.4
+    # via cyclonedx-python-lib
 packaging==23.0
-    # via build
+    # via
+    #   build
+    #   pip-audit
+    #   pip-requirements-parser
+pathspec==0.10.3
+    # via black
+pbr==5.11.1
+    # via stevedore
+pip-api==0.0.30
+    # via pip-audit
+pip-audit==2.4.14
+    # via -r requirements-dev.in
+pip-requirements-parser==32.0.1
+    # via pip-audit
 pip-tools==6.12.1
     # via -r requirements-dev.in
+platformdirs==2.6.2
+    # via
+    #   black
+    #   virtualenv
+pre-commit==2.21.0
+    # via -r requirements-dev.in
+pycodestyle==2.10.0
+    # via flake8
 pydantic==1.10.4
     # via fastapi
+pyflakes==3.0.1
+    # via flake8
+pygments==2.14.0
+    # via rich
+pyparsing==3.0.9
+    # via pip-requirements-parser
 pyproject-hooks==1.0.0
     # via build
+pyyaml==6.0
+    # via
+    #   bandit
+    #   pre-commit
+requests==2.28.2
+    # via cachecontrol
+resolvelib==0.9.0
+    # via pip-audit
+rich==13.2.0
+    # via pip-audit
+six==1.16.0
+    # via html5lib
+smmap==5.0.0
+    # via gitdb
 sniffio==1.3.0
     # via anyio
+sortedcontainers==2.4.0
+    # via cyclonedx-python-lib
 starlette==0.22.0
     # via fastapi
+stevedore==4.1.1
+    # via bandit
+toml==0.10.2
+    # via
+    #   cyclonedx-python-lib
+    #   pip-audit
 tomli==2.0.1
     # via
+    #   black
     #   build
     #   pyproject-hooks
 typing-extensions==4.4.0
     # via
+    #   black
     #   pydantic
     #   starlette
+urllib3==1.26.14
+    # via requests
 uvicorn==0.20.0
     # via -r requirements.in
+virtualenv==20.17.1
+    # via pre-commit
+webencodings==0.5.1
+    # via html5lib
 wheel==0.38.4
     # via pip-tools
 

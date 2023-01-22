@@ -1,2 +1,2 @@
 # for deta.sh
-from tft_stats.main import app  # noqa
+from app.main import app  # noqa
