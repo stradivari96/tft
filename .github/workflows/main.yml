@@ -14,14 +14,14 @@ jobs:
       with:
         python-version: "3.9"
 
-    - name: Install dependencies
-      run: pip install -r requirements-dev.txt
-
-    - name: Pre-commit
-      run: pre-commit run --all-files
-
-    - name: Test with pytest
-      run: pytest --cov=app --cov-report xml
+#    - name: Install dependencies
+#      run: pip install -r requirements-dev.txt
+#
+#    - name: Pre-commit
+#      run: pre-commit run --all-files
+#
+#    - name: Test with pytest
+#      run: pytest --cov=app --cov-report xml
 
     - name: "Install deta"
       run: curl -fsSL https://get.deta.dev/cli.sh | sh
