@@ -119,8 +119,10 @@ pre-commit==2.21.0
     # via -r requirements-dev.in
 pycodestyle==2.10.0
     # via flake8
-pydantic==1.10.4
-    # via fastapi
+pydantic[dotenv]==1.10.4
+    # via
+    #   -r requirements.in
+    #   fastapi
 pyflakes==3.0.1
     # via flake8
 pygments==2.14.0
@@ -135,6 +137,8 @@ pytest==7.2.1
     #   pytest-cov
 pytest-cov==4.0.0
     # via -r requirements-dev.in
+python-dotenv==0.21.1
+    # via pydantic
 pyyaml==6.0
     # via
     #   bandit
