@@ -7,6 +7,7 @@ class Queue:
     name: str
     tier: Optional[str]
     rank: Optional[str]
+    rank_icon_url: Optional[str]
     lp: Optional[int]
     wins: int
     losses: int
