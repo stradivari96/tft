@@ -16,8 +16,8 @@ async def get_profile(summoner_name: str, platform: PLATFORMS = "euw1") -> Profi
         f"/global/default/v1/profile-icons/{profile['profileIconId']}.jpg"
     )
     rank_icon_url_template = (
-        "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/"
-        "global/default/images/ranked-emblem/emblem-{tier}.png"
+        "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets"
+        "/global/default/images/ranked-mini-crests/{tier}.png"
     )
     queues = await _get_entries_for_summoner(profile["id"], platform)
     return Profile(

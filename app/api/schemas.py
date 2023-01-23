@@ -1,13 +1,14 @@
-from typing import List, Optional
+from typing import Dict, Optional
 
 from pydantic import BaseModel, HttpUrl, validator
 
 
-class Queues(BaseModel):
+class Queue(BaseModel):
     name: str
     tier: Optional[str]
     rank: Optional[str]
     lp: Optional[int]
+    rank_icon_url: Optional[HttpUrl]
     wins: int
     losses: int
 
@@ -24,7 +25,7 @@ class ProfileResponseSchema(BaseModel):
     name: str
     profile_icon_url: HttpUrl
     level: int
-    queues: List[Queues]
+    queues: Dict[str, Queue]
 
     class Config:
         schema_extra = {
