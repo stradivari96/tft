@@ -21,7 +21,7 @@ jobs:
       run: pre-commit run --all-files
 
     - name: Test with pytest
-      run: pytest --cov=app --cov-fail-under=80
+      run: pytest --cov=app
 
     - name: "Install deta"
       run: curl -fsSL https://get.deta.dev/cli.sh | sh

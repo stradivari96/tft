@@ -1,3 +1,5 @@
-<h1>
-    HOLA
-</h1>
+{% for summoner in summoner_data %}
+    <h1>{{ summoner.summonerName }}</h1>
+    <p>{{ summoner.tier}} {{ summoner.rank }} {{ summoner.leaguePoints }}</p>
+    <p>Top 4 rate: {{ summoner.top_rate }}</p>
+{% endfor %}

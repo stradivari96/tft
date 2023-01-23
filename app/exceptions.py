@@ -1,0 +1,6 @@
+class SummonerNotFoundException(Exception):
+    ...
+
+
+class InvalidAPIKeyException(Exception):
+    ...
