@@ -1,5 +1,19 @@
-{% for summoner in summoner_data %}
-    <h1>{{ summoner.summonerName }}</h1>
-    <p>{{ summoner.tier}} {{ summoner.rank }} {{ summoner.leaguePoints }}</p>
-    <p>Top 4 rate: {{ summoner.top_rate }}</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamfight Tactics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <body class="bg-blue-100">
+    {% for summoner in summoner_data %}
+        <h1>{{ summoner.name }}</h1>
+        <p>{{ summoner.queues.RANKED_TFT.tier}} {{ summoner.queues.RANKED_TFT.rank }} {{ summoner.queues.RANKED_TFT.lp }}</p>
+        <p>Top 4 rate: {{ summoner.queues.RANKED_TFT.top_rate }}</p>
+        <br/>
+    {% endfor %}
+  </body>
+</html>
