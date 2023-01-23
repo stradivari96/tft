@@ -11,15 +11,18 @@ BASE_URL = "https://{}.api.riotgames.com/tft"
 # TODO use domain model
 async def get_profile(summoner_name: str, platform: PLATFORMS = "euw1") -> Profile:
     profile = await _get_summoner_by_name(summoner_name, platform)
-    profile["profile_icon_url"] = (
+    profile_icon_url = (
         "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data"
         f"/global/default/v1/profile-icons/{profile['profileIconId']}.jpg"
     )
-
+    rank_icon_url_template = (
+        "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/"
+        "global/default/images/ranked-emblem/emblem-{tier}.png"
+    )
     queues = await _get_entries_for_summoner(profile["id"], platform)
     return Profile(
         name=profile["name"],
-        profile_icon_url=profile["profile_icon_url"],
+        profile_icon_url=profile_icon_url,
         level=profile["summonerLevel"],
         queues={
             q["queueType"]: Queue(
@@ -29,6 +32,7 @@ async def get_profile(summoner_name: str, platform: PLATFORMS = "euw1") -> Profi
                 wins=q["wins"],
                 losses=q["losses"],
                 lp=q["leaguePoints"],
+                rank_icon_url=rank_icon_url_template.format(tier=q["tier"].lower()),
             )
             for q in queues
         },
