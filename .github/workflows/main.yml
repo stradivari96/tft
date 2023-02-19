@@ -23,10 +23,9 @@ jobs:
     - name: Test with pytest
       run: pytest --cov=app
 
-    - name: "Install deta"
-      run: curl -fsSL https://get.deta.dev/space-cli.sh | sh
-
-    - name: "Deploy"
-      env:
-        SPACE_ACCESS_TOKEN: ${{ secrets.DETA_ACCESS_TOKEN }}
-      run: /home/runner/.detaspace/bin/space push --id ${{ secrets.PROJECT_ID }}
+    - name: Deta Space Deployment Github Action
+      uses: neobrains/space-deployment-github-action@v0.3
+      with:
+        access_token: ${{ secrets.DETA_ACCESS_TOKEN }}
+        project_id: ${{ secrets.PROJECT_ID }}
+        space_push: true
